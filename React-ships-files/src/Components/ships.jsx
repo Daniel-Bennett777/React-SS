@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getExpandedShips } from "./Services/Fetch";
-
+import { getExpandedShips, deleteShip } from "./Services/Fetch"; // Import your deleteShip function
 
 export const Ships = () => {
   const [shipData, setShipData] = useState([]);
@@ -18,8 +17,8 @@ export const Ships = () => {
       await deleteShip(shipId);
 
       // Re-fetch the updated list of ships (excluding the deleted ship)
-      const updatedShips = ships.filter((ship) => ship.id !== shipId);
-      setShips(updatedShips);
+      const updatedShips = shipData.filter((ship) => ship.id !== shipId); // Correct variable name
+      setShipData(updatedShips); // Correct variable name
     } catch (error) {
       console.error('Error deleting ship:', error);
     }
