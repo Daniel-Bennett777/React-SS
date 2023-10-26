@@ -45,3 +45,20 @@ export async function deleteShip(shipId) {
       throw new Error('Failed to delete the ship');
     }
   }
+
+  export async function updateHauler(haulerId, updatedData) {
+    const response = await fetch(`${API_BASE_URL}/haulers/${haulerId}`, {
+      method: 'PUT', // Assuming you use the PUT method to update
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedData),
+    })};
+    export async function getSingleHauler(haulerId) {
+        const response = await fetch(`${API_BASE_URL}/haulers/${haulerId}`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch hauler with id ${haulerId}`);
+        }
+        const haulerData = await response.json();
+        return haulerData;
+      }

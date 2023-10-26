@@ -15,7 +15,7 @@ export const NavBar = () => {
         <Link to="/docks">Docks</Link>
       </li>
       <li className="navbar-item">
-        <Link to="/home">Home</Link>
+        <Link to="*">Home</Link>
       </li>
     </ul>
   );
