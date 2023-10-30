@@ -4,6 +4,7 @@ import { NavBar } from "../Components/Nav/Navbar";
 import { Ships } from "../Components/ships";
 import { Haulers } from "../Components/haulers";
 import {EditHauler} from "../Components/edithaulers";
+import { Dock } from "../Components/docks";
 
 
 
@@ -48,6 +49,17 @@ export const ApplicationViews = () => {
           <>
             <NavBar/>
             <EditHauler />
+            <Outlet />
+          </>
+          
+        }
+      />
+     <Route
+        path="/docks"
+        element={
+          <>
+            <NavBar/>
+            <Dock />
             <Outlet />
           </>
           
